@@ -59,6 +59,11 @@ main{
 .movie img{
     width: 100%;
 }
+
+.year{
+    color: #fff;
+    font-family: inherit;
+}
 .movie-info{
     color: #eee;
     display: flex;  

@@ -1,9 +1,7 @@
 
 
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0cc16383542d361096c10dea52ad7b33&page=1';
-
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
-
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=0cc16383542d361096c10dea52ad7b33&query="';
 
 
@@ -24,7 +22,7 @@ function showMovies(movies){
     main.innerHTML = ''
 
     movies.forEach((movie) => {
-        const {title, poster_path, vote_average, overview} = movie
+        const {title, poster_path, vote_average, overview, vote_count} = movie
 
         const movieEl = document.createElement('div')
         movieEl.classList.add('movie')
@@ -35,6 +33,9 @@ function showMovies(movies){
             <div class="movie-info">
                 <h3>${title}</h3>
                 <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+            </div>
+            <div class="year">
+             <h4>Vote Count: ${vote_count}</h4>
             </div>
             <div class="overview">
                 ${overview}
